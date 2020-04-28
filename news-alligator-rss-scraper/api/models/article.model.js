@@ -3,14 +3,16 @@ var mongoose = require('mongoose'),
 
 var ArticleSchema = new Schema ({
     title: {type: String, required: true},
-    url: { type: String, required: true, unique: true},
-    imageUrl: {type: String, required: true},
+    link: { type: String, required: true},
+    imageLink: {type: String, required: true},
+    guid: {type: String, required: true, unique: true},
     publisher: {type: String},
     author: { type: String },
     description: {type: String},
-    text: {type: String},
+    body: {type: String},
     pubDate: {type: Date},
-    category: [{type: String}]
+    categories: [{type: String}]
+    
 }, {timestamps: true});
 
 

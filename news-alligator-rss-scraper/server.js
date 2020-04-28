@@ -9,8 +9,8 @@ const port = process.env.PORT || 3000;
 //connect to database
 require('./api/config/db.config');
 
-// require('./api/services/scheduler.service')
-require('./api/services/feed-sub.service')
+require('./api/services/scheduler.service')
+// require('./api/services/feed-sub.service')
 
 //Attach middleware
 app.use(bodyParser.urlencoded({extended: false}));
