@@ -7,7 +7,9 @@ import "./News.css";
 import NewsArticle from "./NewsArticle";
 import NewsCard from "./NewsCard";
 
-function News() {
+function News(props) {
+  const { colNum } = props;
+
   // const classes = useStyles();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,6 +25,10 @@ function News() {
   useEffect(() => {
     setIsLoaded(true);
   }, [items]);
+
+  useEffect(() => {
+    console.log("colnum has changed: ", colNum);
+  }, [colNum]);
 
   useEffect(() => {
     console.log("open", open);
@@ -66,7 +72,8 @@ function News() {
           <div className="row">
             {items.map((item) => (
               // 12-single, 6-double, 4-triple, 3-quad,
-              <Col xs={12} sm={12} md={6} lg={4}>
+              // <Col xs={12} sm={12} md={6} lg={4}>
+              <Col xs={colNum}>
                 <NewsCard
                   item={item}
                   setOpen={setOpen}

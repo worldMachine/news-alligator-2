@@ -12,8 +12,57 @@
     font-size: x-small;
   }
 }
+
+.news-card {
+  /* background-color: "black";
+  color: "black";
+  height: 25em; */
+  /* width: 12em; */
+  color: black;
+  /* height: 40vh; */
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: white;
+  padding: 1;
+  border-radius: 15px;
+  /* align-items: center; */
+  text-align: left;
+  position: relative;
+  /* left: 0; */
+}
+
+.card-img-frame {
+  padding-left: 1vh;
+  padding-right: 1vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+}
+.card-title {
+  padding-top: 1vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  font-size: small;
+}
+
 .card-publisher {
   color: darkblue;
   font-size: x-small;
-  padding-left: 10%;
+  padding-left: 3vh;
+}
+
+.card-date {
+  font-size: x-small;
+  padding-left: 3vh;
+}
+
+.card-text {
+  font-size: small;
+  text-align: left;
 }
