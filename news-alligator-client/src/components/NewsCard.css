@@ -1,0 +1,19 @@
+.news-card:hover {
+  cursor: pointer;
+}
+
+.card-title {
+  /* font-size: x-small; */
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-title {
+    font-size: x-small;
+  }
+}
+.card-publisher {
+  color: darkblue;
+  font-size: x-small;
+  padding-left: 10%;
+}

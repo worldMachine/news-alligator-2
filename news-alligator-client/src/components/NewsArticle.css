@@ -1,0 +1,84 @@
+.article-container {
+  background-color: lightgrey;
+  color: black;
+  position: fixed;
+  /* right: 0; */
+  top: 75px;
+  height: 87%;
+  width: 90%;
+  right: -90%;
+  padding-top: 40px;
+  padding-right: 1em;
+  padding-left: 1em;
+  z-index: 1;
+
+  /* -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s; */
+  display: block;
+
+  border-radius: 15px;
+  /* overflow: auto; */
+  overflow: hidden;
+  text-align: justify;
+}
+
+.collapsed-width {
+  /* width: 0; */
+  right: -90%;
+  /* background-color: green; */
+}
+
+.open-width {
+  /* width: 85%; */
+  right: 5%;
+  /* background-color: red; */
+  transition: 0.5s;
+}
+
+@media only screen and (min-width: 1200px) {
+  .article-body {
+    /* font-size: ; */
+  }
+  .article-container {
+    width: 25%;
+  }
+  .open-width {
+    right: 3%;
+    transition: 0.5s;
+  }
+  .collapsed-width {
+    /* width: 0; */
+    right: -25%;
+    /* background-color: green; */
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .article-container {
+    width: 25%;
+  }
+  .open-width {
+    right: 3%;
+    transition: 0.5s;
+  }
+  .collapsed-width {
+    right: -25%;
+  }
+}
+
+.article-title {
+  font-size: small;
+  font-weight: bold;
+}
+
+.article-body {
+  font-size: small;
+}
+
+.article-close {
+  top: 10px;
+  left: 5%;
+  position: absolute;
+}
