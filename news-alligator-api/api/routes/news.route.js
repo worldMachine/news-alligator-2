@@ -5,4 +5,6 @@ const newsController = require("../controllers/news.controller");
 
 router.get("/all", newsController.getAll);
 
+router.get("/recent", newsController.getRecent);
+
 module.exports = router;

@@ -16,11 +16,16 @@ function News(props) {
   const [items, setItems] = useState([]);
   const [open, setOpen] = useState(false);
   const [item, setItem] = useState("");
+  const [articlesPage, setArticlesPage] = useState(0);
   // const [openArticle, setOpenArticle] = useState("closed-article");
 
   useEffect(() => {
-    retrieveArticles();
+    retrieveArticles(articlesPage);
   }, []);
+
+  useEffect(() => {
+    retrieveArticles(articlesPage);
+  }, [articlesPage]);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -34,18 +39,46 @@ function News(props) {
     console.log("open", open);
   }, [open]);
 
-  const retrieveArticles = () => {
+  const retrieveArticles = (pageNum) => {
+    // let newItems = items;
+
+    console.log("calling get Arts for page: ", pageNum);
+
     useNewsService
-      .getArticles()
+      .getArticles(pageNum)
       .then((response) => {
-        setItems(response.data);
-        console.log(response.data);
+        // newItems.concat(response.data);
+        // setItems(newItems);
+
+        let newItems = items.concat(response.data);
+        setItems(newItems);
+
+        // setItems(response.data);
+        // console.log(response.data);
       })
       .catch((e) => {
         console.log(e);
         setError(e);
       });
   };
+
+  const appendOneArticle = () => {
+    console.log("append one clicked");
+    let dummy = {
+      title: "this is a dummy article",
+      publisher: "me",
+      imageLink: "link",
+    };
+
+    let newItems = items.concat(dummy);
+    setItems(newItems);
+  };
+
+  const loadNextPage = () => {
+    let newPage = articlesPage + 1;
+    setArticlesPage(newPage);
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -82,6 +115,7 @@ function News(props) {
                 />
               </Col>
             ))}
+            <button onClick={() => loadNextPage()}>Load More</button>
           </div>
         </div>
       </React.Fragment>
