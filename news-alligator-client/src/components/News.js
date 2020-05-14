@@ -115,7 +115,9 @@ function News(props) {
                 />
               </Col>
             ))}
-            <button onClick={() => loadNextPage()}>Load More</button>
+            <button className="load-more-btn" onClick={() => loadNextPage()}>
+              Load More
+            </button>
           </div>
         </div>
       </React.Fragment>

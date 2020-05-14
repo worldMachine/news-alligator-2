@@ -7,7 +7,7 @@ import NavDropdown from "./NavDropdown";
 const Nav = (props) => {
   const { showArticle, item, setOpen, isOpen } = props;
   const [menuOpen, setMenuOpen] = useState(false);
-  const [colNum, setColNum] = useState(4);
+  const [colNum, setColNum] = useState(12);
 
   const closeCardClicked = () => {
     // setItem(item);
