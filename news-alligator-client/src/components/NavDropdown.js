@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Nav.css";
 
 const NavDropdown = (props) => {
   const { name, children } = props;
@@ -15,7 +16,7 @@ const NavDropdown = (props) => {
   const classDropdownMenu = "dropdown-menu" + (isToggleOn ? " show" : "");
 
   return (
-    <li className="nav-item dropdown">
+    <li className="nav-item dropdown custom-dropdown">
       <a
         className="nav-link dropdown-toggle"
         id="navbarDropdown"

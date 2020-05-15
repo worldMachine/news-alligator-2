@@ -10,22 +10,31 @@
 }
 
 .load-more-btn {
-  color: blue;
+  /* color: blue; */
   /* height: 40vh; */
   margin-bottom: 20px;
   margin-left: 15px;
   overflow: hidden;
-  background-color: white;
+  /* background-color: white; */
   padding: 1;
 
   border-radius: 15px;
   /* align-items: center; */
   text-align: center;
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 55px;
   font-size: large;
   /* height: 100%; */
+}
+
+.no-bs-border,
+.no-bs-border:focus,
+.no-bs-border:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  font-size: medium;
 }
 
 @media only screen and (max-width: 1920px) {

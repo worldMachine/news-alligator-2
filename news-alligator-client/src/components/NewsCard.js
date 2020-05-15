@@ -27,7 +27,7 @@ const NewsCard = (props) => {
       aria-controls="example-collapse-text"
     >
       <p className="card-title">{item.title}</p>
-      <p className="card-publisher">{item.publisher}</p>
+      <p className="card-publisher na-blue-font">{item.publisher}</p>
       <p className="card-date">{prettyDate}</p>
       <div className="card-img-frame">
         <img className="card-img" src={item.imageLink} />

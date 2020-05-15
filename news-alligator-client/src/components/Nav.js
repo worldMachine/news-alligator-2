@@ -22,56 +22,58 @@ const Nav = (props) => {
 
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light custom-nav ">
-        <a className="navbar-brand" href="/">
-          News Alligator 2
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={() => toggleMenu()}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <div className="nav-container">
+        <nav className="shadow navbar navbar-expand-lg navbar-dark custom-nav ">
+          <a className="navbar-brand custom-navbar-brand" href="/">
+            News Alligator 2
+          </a>
+          <button
+            className="navbar-toggler no-bs-border"
+            type="button"
+            onClick={() => toggleMenu()}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-        <div
-          className={"collapse  bg-light navbar-collapse " + show}
-          id="navbarSupportedContent"
-        >
-          <ul className="navbar-nav mr-auto">
-            {/* <NavItem path="/" name="Home" />
+          <div
+            className={"collapse  navbar-collapse " + show}
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav mr-auto">
+              {/* <NavItem path="/" name="Home" />
             <NavItem path="/page2" name="Page2" />
             <NavItem path="/page3" name="Disabled" disabled="true" /> */}
 
-            <NavDropdown name="Columns">
-              <button
-                onClick={() => colDropDownItemClicked(12)}
-                className="dropdown-item"
-              >
-                1
-              </button>
-              <button
-                onClick={() => colDropDownItemClicked(6)}
-                className="dropdown-item"
-              >
-                2
-              </button>
-              <button
-                onClick={() => colDropDownItemClicked(4)}
-                className="dropdown-item"
-              >
-                3
-              </button>
-              <button
-                onClick={() => colDropDownItemClicked(3)}
-                className="dropdown-item"
-              >
-                4
-              </button>
-            </NavDropdown>
-          </ul>
-        </div>
-      </nav>
+              <NavDropdown name="Columns">
+                <button
+                  onClick={() => colDropDownItemClicked(12)}
+                  className="dropdown-item"
+                >
+                  1
+                </button>
+                <button
+                  onClick={() => colDropDownItemClicked(6)}
+                  className="dropdown-item"
+                >
+                  2
+                </button>
+                <button
+                  onClick={() => colDropDownItemClicked(4)}
+                  className="dropdown-item"
+                >
+                  3
+                </button>
+                <button
+                  onClick={() => colDropDownItemClicked(3)}
+                  className="dropdown-item"
+                >
+                  4
+                </button>
+              </NavDropdown>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <News colNum={colNum} />
     </React.Fragment>
   );

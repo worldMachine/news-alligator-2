@@ -9,10 +9,10 @@
 
 @media only screen and (max-width: 600px) {
   .card-title {
-    font-size: small;
+    font-size: medium;
   }
   .card-publisher {
-    font-size: x-small;
+    font-size: small;
   }
   .card-date {
     font-size: x-small;
@@ -24,16 +24,16 @@
   color: "black";
   height: 25em; */
   /* width: 12em; */
-  color: black;
+  color: #e1e1e1;
   /* height: 40vh; */
   margin-bottom: 20px;
   overflow: hidden;
-  background-color: white;
+  background-color: #1e1e1e;
   padding: 1;
   border-radius: 15px;
   /* align-items: center; */
   text-align: left;
-  position: relative;
+  /* position: relative; */
   /* left: 0; */
 }
 
@@ -58,7 +58,7 @@
 }
 
 .card-publisher {
-  color: darkblue;
+  /* color: #90caf9; */
   font-weight: bold;
   padding-left: 3vh;
   font-size: medium;
@@ -72,4 +72,14 @@
 .card-text {
   font-size: small;
   text-align: left;
+}
+
+.news-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+}
+
+.news-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

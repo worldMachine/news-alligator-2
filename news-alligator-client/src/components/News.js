@@ -113,7 +113,10 @@ function News(props) {
                 />
               </Col>
             ))}
-            <button className="load-more-btn" onClick={() => loadNextPage()}>
+            <button
+              className="btn btn-dark load-more-btn no-bs-border"
+              onClick={() => loadNextPage()}
+            >
               Load More
             </button>
           </div>

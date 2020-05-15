@@ -3,13 +3,17 @@ import "./NewsArticle.css";
 import moment from "moment";
 // import { Collapse, Fade, Button } from "react-bootstrap";
 
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+
 const NewsArticle = (props) => {
+  const myRef = useRef(null);
   const { showArticle, item, setOpen, isOpen } = props;
 
   const [articleBody, setArticleBody] = useState(item.body);
 
   useEffect(() => {
     if (item.body) cleanArticleBody();
+    // scrollToRef(myRef);
   }, [item]);
 
   const closeCardClicked = () => {
@@ -44,7 +48,7 @@ const NewsArticle = (props) => {
         >
           <button
             type="button"
-            className="close article-close"
+            className="close article-close no-bs-border"
             aria-label="Close"
             onClick={() => closeCardClicked()}
           >
@@ -52,7 +56,9 @@ const NewsArticle = (props) => {
           </button>
           <div className="outer-article">
             <div className="body-container">
-              <h1 className="article-title">{item.title}</h1>
+              <h1 className="article-title" ref={myRef}>
+                {item.title}
+              </h1>
 
               <div className="card-img-frame">
                 <img className="card-img" src={item.imageLink} />
@@ -60,11 +66,16 @@ const NewsArticle = (props) => {
               <h2 className="author">
                 {item.author ? "Author: " + item.author : ""}
               </h2>
-              <h2 className="author">{item.publisher}</h2>
+              <h2 className="author na-blue-font">{item.publisher}</h2>
               <p className="author">{prettyDate}</p>
-              <div className="">
-                <div className="text-body">{articleBody}</div>
-              </div>
+              <a
+                className="btn btn-dark custom-btn no-bs-border"
+                target="_blank"
+                href={item.link}
+              >
+                Full Article
+              </a>
+              <p className="text-body">{articleBody}</p>
             </div>
           </div>
         </div>
