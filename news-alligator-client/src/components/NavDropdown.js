@@ -8,6 +8,9 @@ const NavDropdown = (props) => {
   const showDropdown = () => {
     setIsToggleOn(!isToggleOn);
   };
+  // const hideDropDown = () => {
+  //   setIsToggleOn(false);
+  // };
 
   const classDropdownMenu = "dropdown-menu" + (isToggleOn ? " show" : "");
 
@@ -21,6 +24,9 @@ const NavDropdown = (props) => {
         aria-haspopup="true"
         aria-expanded="false"
         onClick={() => showDropdown()}
+        // onBlur={() => showDropdown()}
+        // onFocus={() => showDropdown()}
+        tabIndex="0"
       >
         {name}
       </a>

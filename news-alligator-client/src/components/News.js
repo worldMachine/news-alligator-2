@@ -10,14 +10,12 @@ import NewsCard from "./NewsCard";
 function News(props) {
   const { colNum } = props;
 
-  // const classes = useStyles();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [open, setOpen] = useState(false);
   const [item, setItem] = useState("");
   const [articlesPage, setArticlesPage] = useState(0);
-  // const [openArticle, setOpenArticle] = useState("closed-article");
 
   useEffect(() => {
     retrieveArticles(articlesPage);

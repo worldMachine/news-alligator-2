@@ -3,12 +3,18 @@
 }
 
 .card-title {
-  /* font-size: x-small; */
   font-weight: bold;
+  font-size: large;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   .card-title {
+    font-size: small;
+  }
+  .card-publisher {
+    font-size: x-small;
+  }
+  .card-date {
     font-size: x-small;
   }
 }
@@ -48,18 +54,19 @@
   padding-top: 1vh;
   padding-left: 3vh;
   padding-right: 3vh;
-  font-size: small;
+  /* font-size: small; */
 }
 
 .card-publisher {
   color: darkblue;
-  font-size: x-small;
+  font-weight: bold;
   padding-left: 3vh;
+  font-size: medium;
 }
 
 .card-date {
-  font-size: x-small;
   padding-left: 3vh;
+  font-size: small;
 }
 
 .card-text {
