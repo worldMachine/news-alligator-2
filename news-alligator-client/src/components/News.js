@@ -8,7 +8,7 @@ import NewsArticle from "./NewsArticle";
 import NewsCard from "./NewsCard";
 
 function News(props) {
-  const { colNum } = props;
+  const { colNum, textImagePref } = props;
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,42 +17,12 @@ function News(props) {
   const [item, setItem] = useState("");
   const [articlesPage, setArticlesPage] = useState(0);
 
-  useEffect(() => {
-    retrieveArticles(articlesPage);
-  }, []);
-
-  useEffect(() => {
-    retrieveArticles(articlesPage);
-  }, [articlesPage]);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, [items]);
-
-  useEffect(() => {
-    console.log("colnum has changed: ", colNum);
-  }, [colNum]);
-
-  useEffect(() => {
-    console.log("open", open);
-  }, [open]);
-
   const retrieveArticles = (pageNum) => {
-    // let newItems = items;
-
-    console.log("calling get Arts for page: ", pageNum);
-
     useNewsService
       .getArticles(pageNum)
       .then((response) => {
-        // newItems.concat(response.data);
-        // setItems(newItems);
-
         let newItems = items.concat(response.data);
         setItems(newItems);
-
-        // setItems(response.data);
-        // console.log(response.data);
       })
       .catch((e) => {
         console.log(e);
@@ -60,21 +30,30 @@ function News(props) {
       });
   };
 
-  const appendOneArticle = () => {
-    console.log("append one clicked");
-    let dummy = {
-      title: "this is a dummy article",
-      publisher: "me",
-      imageLink: "link",
-    };
+  useEffect(() => {
+    retrieveArticles(0);
+  }, []);
 
-    let newItems = items.concat(dummy);
-    setItems(newItems);
-  };
+  // useEffect(() => {
+  //   retrieveArticles(articlesPage);
+  // }, [articlesPage]);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, [items]);
+
+  // useEffect(() => {
+  //   console.log("colnum has changed: ", colNum);
+  // }, [colNum]);
+
+  // useEffect(() => {
+  //   console.log("open", open);
+  // }, [open]);
 
   const loadNextPage = () => {
     let newPage = articlesPage + 1;
     setArticlesPage(newPage);
+    retrieveArticles(newPage);
   };
 
   if (error) {
@@ -83,8 +62,6 @@ function News(props) {
   if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    // const classes = useStyles();
-
     return (
       <React.Fragment>
         <NewsArticle
@@ -104,12 +81,13 @@ function News(props) {
             {items.map((item) => (
               // 12-single, 6-double, 4-triple, 3-quad,
               // <Col xs={12} sm={12} md={6} lg={4}>
-              <Col xs={colNum}>
+              <Col xs={colNum} key={item._id}>
                 <NewsCard
                   item={item}
                   setOpen={setOpen}
                   isOpen={open}
                   setItem={setItem}
+                  textImagePref={textImagePref}
                 />
               </Col>
             ))}

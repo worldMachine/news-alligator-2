@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./NewsArticle.css";
+import "./theme.css";
 import moment from "moment";
-// import { Collapse, Fade, Button } from "react-bootstrap";
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 const NewsArticle = (props) => {
   const myRef = useRef(null);
@@ -12,43 +12,44 @@ const NewsArticle = (props) => {
   const [articleBody, setArticleBody] = useState(item.body);
 
   useEffect(() => {
+    const cleanArticleBody = () => {
+      let newBody = item.body.toString().replace(/(\[.*?\])/g, "");
+
+      // console.log(item.body);
+      // console.log(newBody);
+
+      setArticleBody(newBody);
+    };
     if (item.body) cleanArticleBody();
     // scrollToRef(myRef);
   }, [item]);
 
   const closeCardClicked = () => {
-    // setItem(item);
     setOpen(!isOpen);
   };
 
-  const cleanArticleBody = () => {
-    // let newBody = item.body;
-
-    let newBody = item.body.toString().replace(/(\[.*?\])/g, "");
-
-    console.log(item.body);
-    console.log(newBody);
-
-    // newBody = <p><;
-
-    setArticleBody(newBody);
+  // default img src on img error
+  const addDefaultSrc = (ev) => {
+    ev.target.src =
+      "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png";
   };
+
   const prettyDate = moment(item.pubDate).format("MMM Do  h:mm a");
 
-  console.log("showArticle is ", showArticle);
+  // console.log("showArticle is ", showArticle);
   return (
     <React.Fragment>
       <div className=" ">
         <div
           className={
             showArticle
-              ? "article-container open-width"
-              : "article-container collapsed-width"
+              ? "article-container dark-card-bg-color dark-font-color open-width"
+              : "article-container dark-card-bg-color dark-font-color collapsed-width"
           }
         >
           <button
             type="button"
-            className="close article-close no-bs-border"
+            className="close article-close dark-font-color no-bs-border"
             aria-label="Close"
             onClick={() => closeCardClicked()}
           >
@@ -61,7 +62,12 @@ const NewsArticle = (props) => {
               </h1>
 
               <div className="card-img-frame">
-                <img className="card-img" src={item.imageLink} />
+                <img
+                  className="card-img"
+                  alt={"article image " + item.publisher}
+                  src={item.imageLink}
+                  onError={addDefaultSrc}
+                />
               </div>
               <h2 className="author">
                 {item.author ? "Author: " + item.author : ""}
@@ -71,11 +77,12 @@ const NewsArticle = (props) => {
               <a
                 className="btn btn-dark custom-btn no-bs-border"
                 target="_blank"
-                href={item.link}
+                rel="noopener noreferrer"
+                href={item.link.toString()}
               >
                 Full Article
               </a>
-              <p className="text-body">{articleBody}</p>
+              <p className="text-body dark-font-color">{articleBody}</p>
             </div>
           </div>
         </div>

@@ -3,8 +3,6 @@
 }
 
 .article-container {
-  background-color: #1e1e1e;
-  color: #e1e1e1;
   position: fixed;
   top: 75px;
   height: 87vh;
@@ -35,12 +33,8 @@
   margin-left: 3px;
 }
 .outer-article {
-  /* position: relative; */
-  /* overflow: auto; */
-
   height: 100%;
   padding-right: 15px;
-
   overflow: auto;
 }
 
@@ -93,7 +87,6 @@
   overflow-x: hidden;
   overflow-x: auto;
   text-align: justify;
-
   padding-right: 20px;
 }
 
@@ -102,7 +95,6 @@
   left: 5%;
   z-index: 10;
   position: absolute;
-  color: #e1e1e1 !important;
 }
 
 .body-container {
@@ -116,9 +108,23 @@
 .text-body {
   font-size: small;
   width: 100%;
-  color: #e1e1e1 !important;
 }
 
 .author {
   font-size: small;
+}
+
+.dark-card-bg-color {
+  background-color: #1e1e1e;
+}
+
+.dark-font-color {
+  color: #e1e1e1 !important;
+}
+
+.dark-font-color-hover {
+  color: #e1e1e1 !important;
+}
+.dark-font-color-hover:hover {
+  color: #e9e9e9 !important;
 }

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Nav.css";
+import "./theme.css";
 import News from "./News";
-// import NavItem from "./NavItem";
 import NavDropdown from "./NavDropdown";
 
 const Nav = (props) => {
-  const { showArticle, item, setOpen, isOpen } = props;
+  // const { showArticle, item, setOpen, isOpen } = props;
   const [menuOpen, setMenuOpen] = useState(false);
   const [colNum, setColNum] = useState(6);
+  const [textImagePref, setTextImagePref] = useState(true);
+
+  const [isToggleOn, setIsToggleOn] = useState(false);
+  const [isImageToggleOn, setIsImageToggleOn] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -15,7 +19,14 @@ const Nav = (props) => {
 
   const colDropDownItemClicked = (col) => {
     setMenuOpen(false);
+    setIsToggleOn(!isToggleOn);
     setColNum(col);
+  };
+
+  const imgDropDownItemClicked = (pref) => {
+    setMenuOpen(false);
+    setIsImageToggleOn(!isImageToggleOn);
+    setTextImagePref(pref);
   };
 
   const show = menuOpen ? "show" : "";
@@ -24,7 +35,7 @@ const Nav = (props) => {
     <React.Fragment>
       <div className="nav-container">
         <nav className="shadow navbar navbar-expand-lg navbar-dark custom-nav ">
-          <a className="navbar-brand custom-navbar-brand" href="/">
+          <a className="navbar-brand custom-navbar-brand " href="/">
             News Alligator 2
           </a>
           <button
@@ -44,7 +55,11 @@ const Nav = (props) => {
             <NavItem path="/page2" name="Page2" />
             <NavItem path="/page3" name="Disabled" disabled="true" /> */}
 
-              <NavDropdown name="Columns">
+              <NavDropdown
+                name="Columns"
+                setIsToggleOn={setIsToggleOn}
+                isToggleOn={isToggleOn}
+              >
                 <button
                   onClick={() => colDropDownItemClicked(12)}
                   className="dropdown-item"
@@ -70,11 +85,30 @@ const Nav = (props) => {
                   4
                 </button>
               </NavDropdown>
+
+              <NavDropdown
+                name="Image"
+                setIsToggleOn={setIsImageToggleOn}
+                isToggleOn={isImageToggleOn}
+              >
+                <button
+                  onClick={() => imgDropDownItemClicked(false)}
+                  className="dropdown-item"
+                >
+                  Text Only
+                </button>
+                <button
+                  onClick={() => imgDropDownItemClicked(true)}
+                  className="dropdown-item"
+                >
+                  Text and Image
+                </button>
+              </NavDropdown>
             </ul>
           </div>
         </nav>
       </div>
-      <News colNum={colNum} />
+      <News colNum={colNum} textImagePref={textImagePref} />
     </React.Fragment>
   );
 };

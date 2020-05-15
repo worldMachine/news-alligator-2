@@ -20,21 +20,17 @@
 }
 
 .news-card {
-  /* background-color: "black";
-  color: "black";
-  height: 25em; */
-  /* width: 12em; */
   color: #e1e1e1;
-  /* height: 40vh; */
   margin-bottom: 20px;
   overflow: hidden;
   background-color: #1e1e1e;
   padding: 1;
   border-radius: 15px;
-  /* align-items: center; */
   text-align: left;
-  /* position: relative; */
-  /* left: 0; */
+}
+
+.hide-img {
+  display: none;
 }
 
 .card-img-frame {
@@ -54,11 +50,9 @@
   padding-top: 1vh;
   padding-left: 3vh;
   padding-right: 3vh;
-  /* font-size: small; */
 }
 
 .card-publisher {
-  /* color: #90caf9; */
   font-weight: bold;
   padding-left: 3vh;
   font-size: medium;

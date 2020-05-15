@@ -3,7 +3,7 @@ import axios from "axios";
 const getArticles = async (pageNum) => {
   console.log("pageNum is: ", pageNum);
 
-  let page = pageNum.toString();
+  // let page = pageNum.toString();
   // return axios.get("https://jsonplaceholder.typicode.com/albums/1/photos");
   // let response = await axios.get("/api/news/all");
   let response = await axios.get("/api/news/recent", {
