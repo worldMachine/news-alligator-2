@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Nav.css";
 import News from "./News";
-import NavItem from "./NavItem";
+// import NavItem from "./NavItem";
 import NavDropdown from "./NavDropdown";
 
 const Nav = (props) => {
