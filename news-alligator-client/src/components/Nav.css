@@ -1,6 +1,6 @@
 .custom-nav {
-  height: 60px;
-  background-color: #1e1e1e;
+  /* height: 60px; */
+  /* background-color: #1e1e1e; */
 }
 
 .nav-container {
@@ -11,8 +11,10 @@
 }
 
 .custom-dropdown {
-  background-color: #1e1e1e;
-  padding-right: 5%;
+  /* background-color: #1e1e1e;
+  padding-right: 5%; */
+  padding-left: 1.25em;
+  padding-right: 1.25em;
 }
 
 .dropdown-menu {
@@ -28,7 +30,15 @@
   font-size: medium;
 }
 
-.dropdown-item,
+.dropdown-item {
+  color: #e1e1e1 !important;
+}
+
+.dropdown-toggle {
+  font-size: medium;
+}
+
+/* .dropdown-item,
 .dropdown-item:focus,
 .dropdown-item:active {
   color: #e1e1e1 !important;
@@ -36,35 +46,35 @@
   border: none;
   box-shadow: none;
   font-size: medium;
-}
+} */
 
 .dropdown-item:hover {
   background-color: #121212 !important;
 }
 
-.dropdown-toggle,
+/* .dropdown-toggle,
 .dropdown-toggle:focus,
 .dropdown-toggle:active {
   outline: none;
   border: none;
   box-shadow: none;
   font-size: medium;
-}
+} */
 
-.navbar-toggler,
+/* .navbar-toggler,
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none;
   border: none;
   box-shadow: none;
-}
+} */
 
 .navbar-nav {
   padding-top: 10px;
 }
 
 .custom-navbar-brand {
-  margin-left: 5%;
+  /* margin-left: 5%; */
   color: #e1e1e1 !important;
 }
 

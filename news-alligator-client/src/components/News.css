@@ -2,6 +2,8 @@
   padding-top: 10vh;
   transition: padding-right 0.25s;
   width: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 .no-margin {
@@ -16,9 +18,14 @@
 
   border-radius: 15px;
   text-align: center;
-  width: 100%;
+  width: 100vw;
+  margin-right: 2%;
   height: 55px;
   font-size: large;
+}
+
+.row {
+  align-items: center;
 }
 
 .no-bs-border,
@@ -80,7 +87,9 @@
   }
 
   .news-container {
-    margin-left: 3%;
+    /* margin-left: 3%; */
+    /* margin-right: -3%; */
+    /* padding-left: 40px; */
   }
 }
 

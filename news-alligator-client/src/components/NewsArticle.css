@@ -6,11 +6,12 @@
   position: fixed;
   top: 75px;
   height: 87vh;
-  width: 90%;
-  right: -90%;
+  width: 94%;
+  right: -94%;
   padding-top: 40px;
   padding-right: 1em;
   padding-left: 1em;
+  padding-bottom: 10px;
   z-index: 1;
   display: block;
 
@@ -35,15 +36,16 @@
 .outer-article {
   height: 100%;
   padding-right: 15px;
+  margin-top: 10px;
   overflow: auto;
 }
 
 .collapsed-width {
-  right: -90%;
+  right: -94%;
 }
 
 .open-width {
-  right: 5%;
+  right: 3.5%;
   transition: 0.5s;
 }
 
@@ -93,6 +95,7 @@
 .article-close {
   top: 10px;
   left: 5%;
+  font-size: xx-large !important;
   z-index: 10;
   position: absolute;
 }

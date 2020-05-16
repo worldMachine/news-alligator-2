@@ -34,8 +34,8 @@ const Nav = (props) => {
   return (
     <React.Fragment>
       <div className="nav-container">
-        <nav className="shadow navbar navbar-expand-lg navbar-dark custom-nav ">
-          <a className="navbar-brand custom-navbar-brand " href="/">
+        <nav className="shadow navbar navbar-expand-lg navbar-dark dark-card-bg-color ">
+          <a className="navbar-brand  " href="/">
             News Alligator 2
           </a>
           <button
@@ -62,44 +62,44 @@ const Nav = (props) => {
               >
                 <button
                   onClick={() => colDropDownItemClicked(12)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   1
                 </button>
                 <button
                   onClick={() => colDropDownItemClicked(6)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   2
                 </button>
                 <button
                   onClick={() => colDropDownItemClicked(4)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   3
                 </button>
                 <button
                   onClick={() => colDropDownItemClicked(3)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   4
                 </button>
               </NavDropdown>
 
               <NavDropdown
-                name="Image"
+                name="Card"
                 setIsToggleOn={setIsImageToggleOn}
                 isToggleOn={isImageToggleOn}
               >
                 <button
                   onClick={() => imgDropDownItemClicked(false)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   Text Only
                 </button>
                 <button
                   onClick={() => imgDropDownItemClicked(true)}
-                  className="dropdown-item"
+                  className="dropdown-item no-bs-border"
                 >
                   Text and Image
                 </button>
