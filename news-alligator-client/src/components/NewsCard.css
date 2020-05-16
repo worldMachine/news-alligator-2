@@ -1,0 +1,78 @@
+.news-card:hover {
+  cursor: pointer;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: large;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-title {
+    font-size: medium;
+  }
+  .card-publisher {
+    font-size: small;
+  }
+  .card-date {
+    font-size: x-small;
+  }
+}
+
+.news-card {
+  color: #e1e1e1;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  padding: 1;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.hide-img {
+  display: none;
+}
+
+.card-img-frame {
+  padding-left: 1vh;
+  padding-right: 1vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+}
+.card-title {
+  padding-top: 1.5vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+}
+
+.card-publisher {
+  font-weight: bold;
+  padding-left: 3vh;
+  font-size: medium;
+}
+
+.card-date {
+  padding-left: 3vh;
+  font-size: small;
+}
+
+.card-text {
+  font-size: small;
+  text-align: left;
+}
+
+.news-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
