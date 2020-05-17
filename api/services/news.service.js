@@ -13,7 +13,15 @@ const findRecent = async (numArticles, pageNum) => {
   });
 };
 
+const findBeforeDate = async (numArticles, date) => {
+  return Article.find({ pubDate: { $lt: date } }, null, {
+    limit: numArticles,
+    sort: { pubDate: -1 },
+  });
+};
+
 module.exports = {
   findAll,
   findRecent,
+  findBeforeDate,
 };

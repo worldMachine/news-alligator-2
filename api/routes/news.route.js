@@ -7,4 +7,6 @@ router.get("/all", newsController.getAll);
 
 router.get("/recent", newsController.getRecent);
 
+router.get("/beforeDate", newsController.getBeforeDate);
+
 module.exports = router;
